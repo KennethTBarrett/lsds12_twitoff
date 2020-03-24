@@ -17,7 +17,6 @@ python-dotenv = "*"
 python-decouple = "*"
 jinja2 = "*"
 basilica = "*"
-psython-decouple = "*"
 
 [requires]
 python_version = "3.7"
