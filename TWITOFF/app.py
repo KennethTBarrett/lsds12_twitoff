@@ -19,4 +19,11 @@ def create_app():
     def route():
         users = User.query.all()
         return render_template('index.html', title='Home', users=users)
+
+    @app.route('/reset')
+    def reset():
+        DB.drop_all()
+        DB.create_all()
+        return render_template('index.html', title='Reset', users=[])
+
     return app
