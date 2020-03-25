@@ -31,7 +31,7 @@ def add_or_update_user(username):
             # Calculate embedding on the full tweet.
             embedding = BASILICA.embed_sentence(tweet.full_text,
                                                 model='twitter')
-            db_tweet = Tweet(id=tweet.id, text=tweet.full_text[:300],
+            db_tweet = Tweet(id=tweet.id, text=tweet.full_text[:500],
                              embedding=embedding)
             db_user.tweets.append(db_tweet)
             DB.session.add(db_tweet)
