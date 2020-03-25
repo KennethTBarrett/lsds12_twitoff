@@ -9,7 +9,6 @@ verify_ssl = true
 flask = "*"
 tweepy = "*"
 redis = "*"
-psycopg2 = "*"
 flask-sqlalchemy = "*"
 gunicorn = "*"
 scikit-learn = "*"
@@ -17,6 +16,7 @@ python-dotenv = "*"
 python-decouple = "*"
 jinja2 = "*"
 basilica = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"
