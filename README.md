@@ -2,7 +2,7 @@
 Lambda School - Write a web application for comparing and predicting tweets.
 
 ## Web Deployment
-To view this web app deployed live on Heroku, please [click here](https://kennethtbarrett-twitoff.herokuapp.com/ "Kenneth T Barrett's Twitoff Heroku App")
+To view this web app deployed live on Heroku, please [click here](https://kennethtbarrett-twitoff.herokuapp.com/ "Twitoff Heroku Deployment").
 
 ## Setup
 
