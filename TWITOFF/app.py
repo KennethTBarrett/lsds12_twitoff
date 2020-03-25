@@ -42,7 +42,7 @@ def create_app():
                 message = 'User: {} has been successfully added!'.format(name)
             tweets = User.query.filter(User.name == name).one().tweets
         except Exception as e:
-            message = 'Error adding user: {} Error: {}'.format(name, e)
+            message = 'Error adding user: {} <br> Error: {}'.format(name, e)
             tweets = []
         return render_template('user.html', title=name, tweets=tweets, message=message)
 
