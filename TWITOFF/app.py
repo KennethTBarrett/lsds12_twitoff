@@ -70,6 +70,6 @@ def create_app():
     def reset():
         DB.drop_all()
         DB.create_all()
-        return render_template('index.html', title='Reset', users=[])
+        return render_template('reset.html', title='Reset', users=[])  # Has meta redirect (SEO practice)
 
     return app
