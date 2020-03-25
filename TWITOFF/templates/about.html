@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block content %}
+<h2>About Twitoff</h2>
+<img src="https://i.imgur.com/58I6Yzi.png" alt="Lambda School Logo" width=240 height=240>
+<p>Twitoff is a project in Lambda School's immersive data science program. In this sprint of our data engineering and
+  software engineering unit, we're working on deploying our models to web applications. Thus, we have created this Heroku app as a means to learn the
+  process using a simple Logistic Regression model we've created, to help users determine which Twitter user would be more likely
+  to tweet a certain text defined by the user.</p>
+
+<h3>How To Use Twitoff</h3>
+<p>Using Twitoff is simple! Simply enter the username of the specified Twitter user, click 'Add User', then wait for the page to load!
+  Do keep in mind that each user needs to be added in individually, with no '@' necessary.You'll then be given a redirect link back to the index,
+  where you can compare! Just select each user, then enter the tweet text you'd like to predict and click 'Compare Users'.</p>
+
+  <h3>Link to GitHub</h3>
+<p>For a link to the source code for this work, please refer to my <a href="https://github.com/KennethTBarrett/lsds12_twitoff">GitHub repository</a>.</p>
+
+<a href="/" class="btn btn-outline-primary" role="button">← Home</a>
+{% endblock %}

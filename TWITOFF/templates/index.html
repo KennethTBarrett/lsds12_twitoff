@@ -8,7 +8,8 @@
 </head>
 
 <body>
-  <div class="container-fluid">
+  <a href="/about" class="btn btn-outline-warning float-left" role="button">About</a>
+  <a href="/reset" class="btn btn-danger float-right" role="button">Reset Users</a>
     <center>
       <h1>Welcome to Twitoff!</h1>
       <p>This is Kenneth Barrett's Unit 3 - Sprint 3 project for Lambda School's DS12 program.</p>
@@ -47,7 +48,7 @@
             <option value="{{ user.name }}" > {{ user.name }}</option>
             {% endfor %}
           </select>
-             <textarea class="form-control" name=tweet_text placeholder="Tweet text to predict" rows=2></textarea>
+             <textarea class="form-control" name=tweet_text placeholder="Tweet (Text to Predict)" rows=2></textarea>
              <br>
              <input type="submit" class="btn btn-primary" value="Compare Users">
       </div>
@@ -55,7 +56,9 @@
 </center>
 </div>
 </div>
-
 </body>
-
+<br><br><br>
+<footer>
+  <center>&copy; Kenneth T. Barrett 2020</center>
+</footer>
 </html>

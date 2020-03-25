@@ -1,11 +1,14 @@
 {% extends "index.html" %}
 {% block content %}
 <h2>User: {{ title }}</h2>
+{% autoescape false %}
 <p>{{ message }}</p>
-<p><b><i>The following are the first 200 non-retweet, non-reply texts sent by this user.</i></b></p>
+{% endautoescape %}
+<a href="/" class="btn btn-outline-primary" role="button">← Home</a>
+<p><b><i>If no error occurs, the first 200 non-retweet, non-reply tweets sent by them will be displayed below.</i></b></p>
 <ul class="list-group">
   {% for tweet in tweets %}
-  <li class="list-group-item">{{ tweet.id }} - {{ tweet.text }}</li>
+  <li class="list-group-item">Tweet ID: {{ tweet.id }} <br> {{ tweet.text }}</li>
   {% endfor %}
 </ul>
 {% endblock %}

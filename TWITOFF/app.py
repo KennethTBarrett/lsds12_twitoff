@@ -11,7 +11,7 @@ from .twitter import add_or_update_user
 # Now, we want to make an app factory.
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='/js')
 
     # Add our config
     app.config['SQLALCHEMY_DATABASE_URI'] = config('DATABASE_URL')
@@ -26,6 +26,11 @@ def create_app():
         users = User.query.all()
         return render_template('index.html', title='Home', users=users)
 
+    # Route for about page
+    @app.route('/about')
+    def aboutpage():
+        return render_template('about.html', title='About Twitoff')
+
     # New route to get users or get users.
     @app.route('/user', methods=['POST'])
     @app.route('/user/<name>', methods=['GET'])
@@ -37,9 +42,9 @@ def create_app():
                 message = 'User: {} has been successfully added!'.format(name)
             tweets = User.query.filter(User.name == name).one().tweets
         except Exception as e:
-            message = 'Error adding user: {} &nbsp; Error: {}'.format(name, e)
+            message = 'Error adding user: {} <br> Error: {}'.format(name, e)
             tweets = []
-        return render_template('user.html', title=name, tweets=tweets)
+        return render_template('user.html', title=name, tweets=tweets, message=message)
 
     # Route for predictions.
     @app.route('/compare', methods=['POST'])
@@ -52,12 +57,12 @@ def create_app():
             prediction = predict_user(user1, user2,
                                       request.values['tweet_text'])
 
-            message = "{}".format(request.values['tweet_text'] +
-                                  " is more likely to be said by " +
-                                  "{} than {}".format(user2 if prediction
-                                                      else user1, user1 if
-                                                      prediction else user2))
-        return render_template('prediction.html', title='Prediction',
+            message = ("The tweet you specified: <br>" +
+                       "<i>{}".format(request.values['tweet_text'] +
+                                      "</i><br>" + "Is more likely to be " +
+                                      "said by <b>{}</b> than {}.".format(user1 if prediction else user2,
+                                                                          user2 if prediction else user1)))  # Fix line length to follow pep8 standard
+        return render_template('prediction.html', title="Twitoff's Prediction",
                                message=message)
 
 # Route for page to reset database to scratch.
